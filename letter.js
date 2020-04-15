@@ -1,17 +1,17 @@
 function Letter(letter) {
   this.letter = letter;
-  this.theGuess = false;
+  this.guessed = false;
 
-  this.getLetter = function () {
-    if (this.theGuess === false) {
+  this.checkLetter = function (input) {
+    if (input === this.letter) {
+      this.guessed === true;
+    }
+  };
+  this.returnLetter = function () {
+    if (this.guessed === false) {
       return "_";
     } else {
       return this.letter;
-    }
-  };
-  this.letterCheck = function (guess) {
-    if (guess === this.letter) {
-      this.theGuess === true;
     }
   };
 }
