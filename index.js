@@ -21,7 +21,7 @@ var colorList = [
   "white",
 ];
 
-var letterOptions = "abcdefghijklmnopqrstuvwxyz";
+var letterArray = "abcdefghijklmnopqrstuvwxyz";
 
 var random = Math.floor(Math.random() * colorList.length);
 var randomColor = colorList[random];
@@ -33,7 +33,7 @@ var requireNewColor = false;
 var wrongLetters = [];
 var rightLetters = [];
 
-var guessesLeft = 10;
+var guessesLeft = 6;
 
 function playGame() {
   if (requireNewColor) {
@@ -57,7 +57,7 @@ function playGame() {
       ])
       .then(function (input) {
         if (
-          !letterOptions.includes(input.userinput) ||
+          !letterArray.includes(input.userinput) ||
           input.userinput.length > 1
         ) {
           console.log("\nPlease try again!\n");
@@ -97,6 +97,7 @@ function playGame() {
               playGame();
             } else {
               console.log("Sorry you lost!");
+              restartGame();
             }
             function wordChecked(key) {
               confirmWordArray.push(key.guessed);
@@ -106,10 +107,35 @@ function playGame() {
       });
   } else {
     console.log("You know your colors! YOU WON!\n");
+
+    restartGame();
   }
   function completeCheck(key) {
     wordFinished.push(key.guessed);
   }
+}
+
+function restartGame() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Would you like to:",
+        choices: ["Play Again?", "Exit"],
+        name: "restart",
+      },
+    ])
+    .then(function (input) {
+      if (input.restart === "Play Again?") {
+        requireNewColor = true;
+        wrongLetters = [];
+        rightLetters = [];
+        guessesLeft = 6;
+        playGame();
+      } else {
+        return;
+      }
+    });
 }
 
 playGame();
