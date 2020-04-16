@@ -21,7 +21,7 @@ var colorList = [
   "white",
 ];
 
-var letterArray = "abcdefghijklmnopqrstuvwxyz";
+var letterOptions = "abcdefghijklmnopqrstuvwxyz";
 
 var random = Math.floor(Math.random() * colorList.length);
 var randomColor = colorList[random];
@@ -57,7 +57,7 @@ function playGame() {
       ])
       .then(function (input) {
         if (
-          !letterArray.includes(input.userinput) ||
+          !letterOptions.includes(input.userinput) ||
           input.userinput.length > 1
         ) {
           console.log("\nPlease try again!\n");
