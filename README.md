@@ -14,7 +14,7 @@ The different files needed to create the game:
 
 ### **Image One:**
 
-![alt text](lost.png)
+![alt text](images/lost.png)
 This displays a round of a user guessing letters. The game keeps track of:
 
 1. How many guesses the user has left.
@@ -28,7 +28,7 @@ This displays a round of a user guessing letters. The game keeps track of:
 
 ### **Image Two:**
 
-![alt text](win.png)
+![alt text](images/win.png)
 
 This displays a round of a user guessing letters. The game keeps track of (but wanted to highlight some diffrences in this image):
 
@@ -40,13 +40,13 @@ This displays a round of a user guessing letters. The game keeps track of (but w
 
 ### **Image Three:**
 
-![alt text](exit.png)
+![alt text](images/exit.png)
 
 This displays image display the user selecting **Exit** out of the list options.
 
 ### **Image Four:**
 
-![alt text](guess.png)
+![alt text](images/guess.png)
 
 Again this displays a round of a user guessing letters.
 
